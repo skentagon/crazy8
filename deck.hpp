@@ -20,7 +20,7 @@ class Deck {
       std::random_device seed_gen;
       std::mt19937_64 engine(seed_gen());
       for( int i=0; i<10000; ++i ){
-        swapCards( engine()%52, engine()%52 );
+        swapCards( static_cast<int>(engine()%52), static_cast<int>(engine()%52) );
       }
       std::cout << "Deck initialization completed." << std::endl;
     }
