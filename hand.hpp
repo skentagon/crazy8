@@ -9,13 +9,14 @@ class Hand {
     Card *cards = nullptr;
     int n_cards = 0;
   public:
-    // Hand(){} // automatically provided
+    Hand(){} // automatically provided
     ~Hand(){
       delete[] cards;
     }
 
     int getCardsNum() const { return n_cards; }
     Card* getCard( int index ) const { return &cards[index]; }
+
     void push( Card card ){
       ++n_cards;
       Card* temp = new Card[n_cards];

@@ -14,7 +14,7 @@ class Card {
   public:
     Card() = default; // use default constructor
     Card( int rank, int suit ) : rank(rank), suit(suit) {}
-    //~Card() // automaticaly provided
+    ~Card(){}; // automaticaly provided
 
     // accessors
     int getRank() const { return rank; }

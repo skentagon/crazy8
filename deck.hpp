@@ -24,12 +24,12 @@ class Deck {
       }
       std::cout << "Deck initialization completed." << std::endl;
     }
-    //~Deck() // automatically provided
+    ~Deck(){}; // automatically provided
 
     int getCardsNum() const { return n_cards; }
 
     Card pop(){ // get top card
-      if (!n_cards) throw std::runtime_error("cards don't exist");
+      //if (!n_cards) throw std::runtime_error("cards don't exist");
       --n_cards;
       return cards[n_cards];
     }

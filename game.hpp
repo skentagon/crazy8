@@ -2,6 +2,7 @@
 #ifndef CRAZY8_GAME_HEADER_INCLUDED
 #define CRAZY8_GAME_HEADER_INCLUDED
 
+
 #include "deck.hpp"
 #include "card.hpp"
 #include "player.hpp"
@@ -12,9 +13,10 @@ class Game {
     Player players[2];
     Card pile;
     int nextSuit = -1;
+    
   public:
     Game();
-    //~Game() // automatically provided
+    //~Game(); // automatically provided
 
     void executeTurn(){
       printGameState();

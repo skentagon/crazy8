@@ -12,10 +12,11 @@ Game::Game(){
   }
   // set players info
   players[0].setName("player");
-  players[0].setType(Player::Type::player);
+  players[0].setType(0); // player
   players[1].setName("COM");
-  players[1].setType(Player::Type::com);
-  std::cout << "Game initialization completed." << std::endl;
+  players[1].setType(1); // com
+  pile = cards.pop();
+  //std::cout << "Game initialization completed." << std::endl;
 }
 
 bool Game::checkGameEnd(){
@@ -88,7 +89,7 @@ void Game::playCards(){
     int cmd = players[i].getCmd(this,&next);
     if ( cmd == -1 ) { // draw card
       players[i].push(cards.pop());
-      if (!cards.getCardsNum()) return; // No cards in deck
+      if ( cards.getCardsNum() == 0 ) return; // No cards in deck
     } else {
       pile = *players[i].getCard(cmd);
       nextSuit = -1;

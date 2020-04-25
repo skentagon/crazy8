@@ -7,7 +7,7 @@
 #include "game.hpp"
 
 int Player::getCmd( Game* game, int* next ){
-  if ( type == com ){ // COM
+  if ( type == 1 ){ // COM
     int rv = -1; // return value
     for( int i=0; i<getCardsNum(); ++i ){
       if ( getCard(i)->getRank() == 7 ){
