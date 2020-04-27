@@ -2,8 +2,10 @@
 #ifndef CRAZY8_DECK_HEADER_INCLUDED
 #define CRAZY8_DECK_HEADER_INCLUDED
 
-#include <exception>
-#include <random>
+//#include <exception>
+//#include <random>
+#include <cstdlib> // or <stdlib.h>
+#include <ctime> // or <time.h>
 #include "card.hpp"
 
 class Deck {
@@ -17,10 +19,16 @@ class Deck {
       n_cards = 52;
       for( int i=0; i<n_cards; ++i ){ cards[i] = Card( i%13, i/13 ); }
       //sufflel;
+      /*
       std::random_device seed_gen;
       std::mt19937_64 engine(seed_gen());
       for( int i=0; i<10000; ++i ){
         swapCards( static_cast<int>(engine()%52), static_cast<int>(engine()%52) );
+      }
+      */
+      std::srand(static_cast<unsigned int>(std::time(NULL)));
+      for( int i=0; i<10000; ++i ){
+        swapCards( static_cast<int>(std::rand()%52), static_cast<int>(std::rand()%52) );
       }
       std::cout << "Deck initialization completed." << std::endl;
     }
@@ -29,7 +37,6 @@ class Deck {
     int getCardsNum() const { return n_cards; }
 
     Card pop(){ // get top card
-      //if (!n_cards) throw std::runtime_error("cards don't exist");
       --n_cards;
       return cards[n_cards];
     }

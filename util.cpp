@@ -16,5 +16,10 @@ namespace util {
       default:
         return "";
     }
+  };
+  void toLower( std::string& s ){
+    for( int t=0; t<s.length(); ++t ){
+      if ( 'A' <= s[t] && s[t] <= 'Z' ) s[t] -= (char)('A' - 'a');
+    }
   }
 }

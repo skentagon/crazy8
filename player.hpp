@@ -2,7 +2,6 @@
 #ifndef CRAZY8_PLAYER_HEADER_INCLUDED
 #define CRAZY8_PLAYER_HEADER_INCLUDED
 
-#include <algorithm>
 #include <string>
 #include "card.hpp"
 #include "hand.hpp"

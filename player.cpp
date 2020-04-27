@@ -1,10 +1,11 @@
 
-#include <algorithm>
+//#include <algorithm>
 #include <string>
 #include "card.hpp"
 #include "hand.hpp"
 #include "player.hpp"
 #include "game.hpp"
+#include "util.hpp"
 
 int Player::getCmd( Game* game, int* next ){
   if ( type == 1 ){ // COM
@@ -45,7 +46,8 @@ int Player::getCmd( Game* game, int* next ){
         while(true){
           std::cout << "Please selecte the next suit. (club,diamond,heart,space)" << std::endl;
           std::string s; std::cin >> s;
-          std::transform( s.begin(), s.end(), s.begin(), ::tolower );
+          //std::transform( s.begin(), s.end(), s.begin(), ::tolower );
+          util::toLower(s);
           if ( s == "club" || s == "c" ){
             *next = 0;
             break;

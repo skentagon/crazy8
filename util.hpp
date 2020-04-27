@@ -6,6 +6,7 @@
 
 namespace util {
   std::string getSuitString( int suit );
+  void toLower( std::string& s );
 }
 
 #endif

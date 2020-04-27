@@ -3,7 +3,7 @@
 #define CRAZY8_CARD_HEADER_INCLUDED
 
 #include <iostream>
-#include <iomanip>
+//#include <iomanip>
 #include "util.hpp"
 
 class Card {
@@ -31,11 +31,11 @@ class Card {
     }
     void printCard(){
       std::cout << "["
-        << std::setfill(' ')
-        << std::setw(7)
+        // << std::setfill(' ')
+        // << std::setw(7)
         << getSuitString()
         << "-"
-        << std::setw(2)
+        // << std::setw(2)
         << getRankString()
         << "]";
     }

@@ -1,5 +1,5 @@
 exe_file = crazyeights
-CC = g++ -std=c++11
+CC = g++ -std=c++11 
 
 $(exe_file): main.o game.o player.o util.o
 		$(CC) -o $(exe_file) main.o game.o player.o util.o
