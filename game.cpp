@@ -15,6 +15,7 @@ Game::Game(){
   players[0].setType(Player::Type::player);
   players[1].setName("COM");
   players[1].setType(Player::Type::com);
+  pile = cards.pop();
   std::cout << "Game initialization completed." << std::endl;
 }
 
