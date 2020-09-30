@@ -1,7 +1,8 @@
 
 #include <string>
 #include <iostream>
-//#include <algorithm>
+#include <algorithm>
+#include "Ncursescpp/src/Ncurses.hpp"
 
 #include "card.hpp"
 #include "deck.hpp"

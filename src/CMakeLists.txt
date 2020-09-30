@@ -24,9 +24,15 @@ elseif(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
 endif()
 
+#add_subdirectory(Ncursescpp)
+
+find_package(ncursescpp REQUIRED)
 add_executable(crazy8
   main.cpp
   game.cpp
   player.cpp
   util.cpp
+)
+target_link_libraries(crazy8
+  PUBLIC ncursescpp::ncursescpp
 )
